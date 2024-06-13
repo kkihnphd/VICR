@@ -1,2 +1,2 @@
 # VICR
-Video &amp;amp; Image Cutter &amp;amp; Randomizer (VICR) software and tutorial.
+Video & Image Cutter & Randomizer (VICR) software and tutorial.
