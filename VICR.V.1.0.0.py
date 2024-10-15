@@ -371,8 +371,8 @@ def review_and_classify_videos(videos, cropped_videos_dir, results_path=None):
                 cv2.putText(control_panel,
                             "Jump Forward - 'g', Jump Backward - 'n', Speed Up - 'u', Speed Down - 'd', Quit - 'q'",
                             (10, 90), text_font, 0.7, text_color, 2)
-                cv2.putText(control_panel, f"Speed: {playback_speed}x", (10, 120),
-                            text_font, 0.7, text_color, 2)
+               # cv2.putText(control_panel, f"Speed: {playback_speed}x", (10, 120),
+               #             text_font, 0.7, text_color, 2)
 
                 # Display real time on video
                 real_time_seconds = current_frame / frame_rate
