@@ -557,7 +557,7 @@ def image_to_single_frame_video(image_path, output_video_path):
     video.release()
 
 
-def convert_image_to_video(image_path, video_path, duration=15, fps=30):
+def convert_image_to_video(image_path, video_path, duration=1, fps=30):
     """Converts an image into a video with the specified duration (default 15 seconds) and fps (default 30)."""
     img = cv2.imread(image_path)
     height, width, layers = img.shape
