@@ -557,14 +557,22 @@ def image_to_single_frame_video(image_path, output_video_path):
     video.release()
 
 
-def convert_image_to_video(image_path, video_path):
-    """Converts an image into a one-frame video."""
+def convert_image_to_video(image_path, video_path, duration=15, fps=30):
+    """Converts an image into a video with the specified duration (default 15 seconds) and fps (default 30)."""
     img = cv2.imread(image_path)
     height, width, layers = img.shape
-    video = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), 1, (width, height))
-    video.write(img)
+    video = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+
+    # Number of frames for the given duration and fps
+    num_frames = duration * fps
+
+    for _ in range(num_frames):
+        video.write(img)  # Write the same image for the duration
+
     video.release()
     return video_path
+
+
 def select_image_files():
     global image_paths, stage_names, video_paths, mode, temp_video_paths, cropped_videos_dir
     image_paths = filedialog.askopenfilenames(
